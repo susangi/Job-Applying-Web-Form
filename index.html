@@ -137,14 +137,14 @@
 							            <td class="col-sm-4">
 							                <input type="text" name="certificate" class="form-control" />
 							            </td>
-							            <td class="col-sm-4">
+							            <td class="col-sm-3">
 							                <input type="mail" name="institute"  class="form-control"/>
 							            </td>
 							            <td class="col-sm-1">
-							                <div class="dropdown control-label col-sm-1 text-center">
+							                <div class="dropdown control-label text-center">
 										  		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="class" >Class
 										  		<span class="caret"></span></button>
-										  			<ul class="dropdown-menu">
+										  			<ul class="dropdown-menu classDrop">
 										    		<li><a>1<sup>st</sup></a></li>
 										    		<li><a>2<sup>nd</sup> Upper</a></li>
 										    		<li><a>2<sup>nd</sup> Lower</a></li>
@@ -159,11 +159,11 @@
 							            <td class="col-sm-1">
 							                <input type="text" class="form-control datepicker" name="datepicker" id="datepickerFromEdu" />
 							            </td>
-							            <td class="col-sm-1">
+							            <td class="col-sm-3">
 							                <input type="text" class="form-control datepicker" name="datepicker" id="datepickerToEdu" />
 							            </td>
-							             <td class="col-sm-2">
-							             	<a class="deleteRow"></a>
+							             <td class="col-sm-1">
+							             	<input type="button" class="btn btn-outline-primary " id="addrow" value="+" />
 										</td>
 							            
 							        </tr>
@@ -173,9 +173,7 @@
                      </table>
 		        </div>
 		      </div>
-		      <div class="col-sm-1">
-		      	<input type="button" class="btn btn-outline-primary " id="addrow" value="+" />
-		      </div> 
+		       
 
 		      </div>
 		    </div>
@@ -193,15 +191,16 @@
 		        	<table class="table table-bordered order-list1">
    					 <thead class="thead-primary">
    					 	<tr>
-                                <th class="col-sm-3" style= "text-align: center;">
+                                <th class="col-sm-4" style= "text-align: center;">
                                     Title (Member of IESC)
-                                </th class="col-sm-3" style= "text-align: center;">
+                                </th class="col-sm-4" style= "text-align: center;">
                                 <th>
                                     Institute
                                 </th>
-                                <th class="col-sm-3" style= "text-align: center;">
+                                <th class="col-sm-4" style= "text-align: center;">
                                     Date of Award
                                 </th>
+
                         </tr>
                         </thead>
                                 <tbody>
@@ -209,12 +208,15 @@
 							            <td class="col-sm-3">
 							                <input type="text" name="title" class="form-control" />
 							            </td>
-							            <td class="col-sm-3">
+							            <td class="col-sm-4">
 							                <input type="text" name="institutePro"  class="form-control"/>
 							            </td>
 							            <td class="col-sm-3">
 							                <input type="date" name="DateAwardPro"  class="form-control"/>
 							            </td>
+							            <td class="col-sm-2">
+							             	<input type="button" class="btn btn-outline-primary addrowPro"  value="+" />
+										</td>
 							        </tr>
 							    </tbody>
 							     
@@ -222,9 +224,7 @@
                      </table>
 		        </div>
 		      </div>
-		      <div class="col-sm-1">
-		      	<input type="button" class="btn btn-outline-primary " id="addrowPro" value="+" />
-		      </div> 
+		      
 
 		      </div>
 		    </div>
@@ -242,33 +242,36 @@
 		        	<table class="table table-bordered order-listEX">
    					 <thead class="thead-primary">
    					 	<tr>
-                                <th class="col-sm-3" style= "text-align: center;">
+                                <th class="col-sm-4" style= "text-align: center;">
                                     Company/Organization
-                                </th class="col-sm-3" style= "text-align: center;">
+                                </th class="col-sm-4" style= "text-align: center;">
                                 <th>
                                     Position
                                 </th>
-                                <th class="col-sm-3" style= "text-align: center;">
+                                <th class="col-sm-2" style= "text-align: center;">
                                     From
                                 </th>
-                                <th class="col-sm-3" style= "text-align: center;">
+                                <th class="col-sm-2" style= "text-align: center;">
                                     To
                                 </th>
                         </tr>
                         </thead>
                                 <tbody>
 							       <tr>
-							            <td class="col-sm-3">
+							            <td class="col-sm-4">
 							                <input type="text" name="company" class="form-control" />
 							            </td>
-							            <td class="col-sm-3">
+							            <td class="col-sm-4">
 							                <input type="text" name="position"  class="form-control"/>
 							            </td>
-							            <td class="col-sm-3">
+							            <td class="col-sm-2">
 							                <input type="text" class="form-control datepicker" name="datepicker" id="datepickerFromEx" />
 							            </td>
-							            <td class="col-sm-3">
+							            <td class="col-sm-2">
 							                <input type="text" class="form-control datepicker" name="datepicker" id="datepickerToEx" />
+							            </td>
+							            <td>
+							            	<input type="button" class="btn btn-outline-primary " id="addrowEx" value="+" />
 							            </td>
 							        </tr>
 							    </tbody>
@@ -277,9 +280,7 @@
                      </table>
 		        </div>
 		      </div>
-		      <div class="col-sm-1">
-		      	<input type="button" class="btn btn-outline-primary " id="addrowEx" value="+" />
-		      </div> 
+		      
 
 		      </div>
 		    </div>
@@ -327,7 +328,7 @@
 	// display selected class in droup down of highest qualifications
 	$(function(){
 
-		$("#classdrop.dropdown-menu li a").click(function(){
+		$(".classDrop.dropdown-menu li a").click(function(){
 
 		$("#class").text($(this).text());
 			 $("#class").val($(this).text());
@@ -335,13 +336,16 @@
 		});
 
 	});
-		
+	
+	//datepicker for a selsect only month & year	
 	$(".datepicker").datepicker( {
     format: "mm-yyyy",
     startView: "months", 
     minViewMode: "months"
 	});	
 
+	
+	//rows add and delete in higher edu qulification
 	$(document).ready(function () {
     	var counter = 0;
 
@@ -351,42 +355,55 @@
 
 			cols += '<td><input type="text" class="form-control" name="certificate' + counter + '"/></td>';
 			cols += '<td><input type="text" class="form-control" name="institute' + counter + '"/></td>';
-			cols += '<td><input type="text" class="form-control" name="class' + counter + '"/></td>';
+			cols += '<td><div class="dropdown control-label text-center"> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"  id="class" name ="classDrop '+ counter + '" >Class <span class="caret"></span></button><ul class="dropdown-menu classDrop"><li><a>1<sup>st</sup></a></li><li><a>2<sup>nd</sup> Upper</a></li><li><a>2<sup>nd</sup> Lower</a></li><li><a>3<sup>rd</sup></a></li><li><a>General</a></li></ul></div></td>';
 			 cols += '<td><input type="date" class="form-control" name="dateAward' + counter + '"/></td>';
-			cols += '<td><input type="date" class="form-control" name="FromDate' + counter + '"/></td>';
-			cols += '<td><input type="date" class="form-control" name="ToDate' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control datepicker" id="datepickerFromEdu" name="datepicker' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control datepicker" id="datepickerToEdu" name="datepicker' + counter + '"/></td>';
 			cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
 
+			// add new row
 			newRow.append(cols);
 			$("table.order-list").append(newRow);
 				counter++;
 			});
 
-			 $("table.order-list").on("click", ".ibtnDel", function (event) {
-        $(this).closest("tr").remove();       
-        counter -= 1
-    });
+			//delete row
+			$("table.order-list").on("click", ".ibtnDel", function (event) {
+        		$(this).closest("tr").remove();       
+        		counter -= 1
+    		});
 	});
 
+	
+	//rows add and delete in Professional qulification
 	$(document).ready(function () {
     	var counter = 0;
 
-		$("#addrowPro").on("click", function () {
+		$(".addrowPro").on("click", function () {
 			var newRow = $("<tr>");
 			var cols = "";
 
 			cols += '<td><input type="text" class="form-control" name="title' + counter + '"/></td>';
 			cols += '<td><input type="text" class="form-control" name="institutePro' + counter + '"/></td>';
 			cols += '<td><input type="date" class="form-control" name="DateAwardPro' + counter + '"/></td>';
+			cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger" value="Delete"></td>';
 			
+			//add row
 			newRow.append(cols);
 			$("table.order-list1").append(newRow);
 				counter++;
 			});
 
+			//delete row
+			$("table.order-list1").on("click", ".ibtnDel", function (event) {
+        		$(this).closest("tr").remove();       
+        		counter -= 1
+    		});
 			
 	});
 
+	
+	//rows add and delete in Experence
 	$(document).ready(function () {
     	var counter = 0;
 
@@ -396,13 +413,22 @@
 
 			cols += '<td><input type="text" class="form-control" name="company' + counter + '"/></td>';
 			cols += '<td><input type="text" class="form-control" name="position' + counter + '"/></td>';
-			cols += '<td><input type="date" class="form-control" name="FromDateEx' + counter + '"/></td>';
-			cols += '<td><input type="date" class="form-control" name="ToDateEx' + counter + '"/></td>';
-			
+			cols += '<td><input type="text" class="form-control datepicker" id="datepickerToEx" name="datepicker' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control datepicker" id="datepickerToEx" name="datepicker' + counter + '"/></td>';
+			cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+
+			//add row
 			newRow.append(cols);
 			$("table.order-listEX").append(newRow);
 				counter++;
 			});
+
+
+			//delete row
+			$("table.order-listEX").on("click", ".ibtnDel", function (event) {
+        		$(this).closest("tr").remove();       
+        		counter -= 1
+    		});
 
 			
 	});
