@@ -142,9 +142,9 @@
 							            </td>
 							            <td class="col-sm-1">
 							                <div class="dropdown control-label text-center">
-										  		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="class" >Class
+										  		<button class="btn btn-default dropdown-toggle class" type="button" data-toggle="dropdown" id="class" >Class
 										  		<span class="caret"></span></button>
-										  			<ul class="dropdown-menu classDrop">
+										  			<ul class="dropdown-menu classDrop" style="position: relative;">
 										    		<li><a>1<sup>st</sup></a></li>
 										    		<li><a>2<sup>nd</sup> Upper</a></li>
 										    		<li><a>2<sup>nd</sup> Lower</a></li>
@@ -330,6 +330,7 @@
 
 		$(".classDrop.dropdown-menu li a").click(function(){
 
+		
 		$("#class").text($(this).text());
 			 $("#class").val($(this).text());
 
@@ -355,7 +356,7 @@
 
 			cols += '<td><input type="text" class="form-control" name="certificate' + counter + '"/></td>';
 			cols += '<td><input type="text" class="form-control" name="institute' + counter + '"/></td>';
-			cols += '<td><div class="dropdown control-label text-center"> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"  id="class" name ="classDrop '+ counter + '" >Class <span class="caret"></span></button><ul class="dropdown-menu classDrop"><li><a>1<sup>st</sup></a></li><li><a>2<sup>nd</sup> Upper</a></li><li><a>2<sup>nd</sup> Lower</a></li><li><a>3<sup>rd</sup></a></li><li><a>General</a></li></ul></div></td>';
+			cols += '<td><div class="dropdown control-label text-center"> <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"  id="class" name ="classDrop '+ counter + '" >Class <span class="caret"></span></button><ul class="classDrop dropdown-menu" style="position: relative;"><li><a>1<sup>st</sup></a></li><li><a>2<sup>nd</sup> Upper</a></li><li><a>2<sup>nd</sup> Lower</a></li><li><a>3<sup>rd</sup></a></li><li><a>General</a></li></ul></div></td>';
 			 cols += '<td><input type="date" class="form-control" name="dateAward' + counter + '"/></td>';
 			cols += '<td><input type="text" class="form-control datepicker" id="datepickerFromEdu" name="datepicker' + counter + '"/></td>';
 			cols += '<td><input type="text" class="form-control datepicker" id="datepickerToEdu" name="datepicker' + counter + '"/></td>';
