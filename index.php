@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Appication Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/mystyles.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+
+</head>
+<body>
+ 
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Application Form</div>
+    <div class="panel-body">
+    	<!-- Form Begining -->
+    	<form class="form-horizontal" action="/submit.php">
+
+	    	<!-- Position select -->
+	    	<div class="form-group">
+	    		<div class="form-group">
+		      		<label class="control-label col-sm-2" for="posistion-drop">Position: </label>
+	    		<div class="dropdown control-label col-sm-2">
+			  		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="Position">Position
+			  		<span class="caret"></span></button>
+			  			<ul class="dropdown-menu" id = "positiondrop">
+			    		<li><a>Senior Professor</a></li>
+			    		<li><a>Professor</a></li>
+			    		<li><a>Associate Professor</a></li>
+			  		</ul>
+				</div>
+				</div>
+	    	
+			</div>
+
+			<!-- Personal Details add -->
+			<div class="form-group">
+		      <label class="control-label col-sm-2" for="surname">Surname / <br/> Last Name:</label>
+		      <div class="col-sm-8">
+		        <input type="text" class="form-control" id="surname" placeholder="Enter Your Surname or Last Namre" name="surname" required>
+		      </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="otherName">Other Names:</label>
+		      <div class="col-sm-8">          
+		        <input type="text" class="form-control" id="otherName" placeholder="Enter Your Other Names" name="otherName" required>
+		      </div>
+		    </div>
+		    <div class="row">
+		    	<div class="form-group col-sm-5">
+			      <label class="control-label col-sm-2" for="nic">NIC NO:</label>
+			      <div class="col-sm-7">          
+			        <input type="text" class="form-control" id="nic" placeholder="967871800V or 199678701800 "  pattern = "([0-9]{9}[V|v])|[0-9]{12}" maxlength="12" name="nic" required> 
+			      </div>
+			  	</div>
+				 
+				 <div class="form-group col-sm-7">
+				      <label class="control-label col-sm-2" for="dob">Date of Birth:</label>
+				      <div class="col-sm-5">          
+				        <input type="date" class="form-control" id="dob" name="dob" required>
+				      </div>
+				   
+				 </div>			      
+		    	</div>
+
+
+		    
+
+		    <div class="row">
+		    	<div class="form-group col-sm-5">
+		      <label class="control-label col-sm-2" for="mobielNo">Mobile No:</label>
+		      <div class="col-sm-7">          
+		        <input type="text" class="form-control" id="mobielNo" placeholder="07(0/1/2/5/6/7/8)XXXXXXX" pattern="07[1,2,5,6,7,8][0-9]+" name="mobielNo" required>
+		      </div>
+		    </div>
+
+		     <div class="form-group col-sm-7">
+		      <label class="control-label col-sm-2" for="email">Email:</label>
+			      <div class="col-sm-6">          
+			        <input type="email" class="form-control" id="email" placeholder="ex: abc@ac.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+				</div>
+		   	</div>
+		    </div>
+
+		    
+
+
+		    
+
+    		<!-- Academic Qualifications -->
+    		<div class="form-group">
+    			<div class="row">
+    				<label class="control-label col-sm-3" for="academic">Academic Qualifications:</label>
+    			</div>
+		      
+		       <div class="row">
+		       	<div class="col-sm-1"></div> 
+		       <div class="col-sm-9">          
+		        <div class="table-responsive"> 
+		        	<table class="table table-bordered order-list">
+   					 <thead class="thead-primary">
+   					 	<tr>
+                                <th class="col-sm-4" style= "text-align: center;">
+                                    Certificate (eg BSc in Computer Science)
+                                </th>
+                                <th class="col-sm-4" style= "text-align: center;">
+                                    Name of Institution
+                                </th>
+                                <th class="col-sm-1" style= "text-align: center;">
+                                    Class
+                                </th>
+                                
+                                <th class="col-sm-1" style= "text-align: center;">
+                                    Date of Award
+                                </th>
+                                <th class="col-sm-1" style= "text-align: center;">
+                                    From
+                                </th>
+                                <th class="col-sm-1" style= "text-align: center;">
+                                    To
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                                <tbody>
+							       <tr>
+							            <td class="col-sm-4">
+							                <input type="text" name="certificate" class="form-control" />
+							            </td>
+							            <td class="col-sm-3">
+							                <input type="mail" name="institute"  class="form-control"/>
+							            </td>
+							            <td class="col-sm-1">
+							                <div class="dropdown control-label text-center">
+										  		<select style="width:130px;" class="btn btn-default dropdown-toggle class" id="class" name ="classDrop" >Class <span class="caret"></span><option><a>1<sup>st</sup></a></option ><option ><a>2<sup>nd</sup> Upper</a></option ><option><a>2<sup>nd</sup> Lower</a></option ><option><a>3<sup>rd</sup></a></option><option><a>General</a></option></select>
+											</div>
+							            </td>
+							            <td class="col-sm-1">
+							                <input type="date" name="dateAward"  class="form-control"/>
+							            </td>
+							            <td class="col-sm-1">
+							                <input type="text" class="form-control datepicker" name="datepicker" id="datepickerFromEdu" />
+							            </td>
+							            <td class="col-sm-3">
+							                <input type="text" class="form-control datepicker" name="datepicker" id="datepickerToEdu" />
+							            </td>
+							             <td class="col-sm-1">
+							             	<input type="button" class="btn btn-outline-primary " id="addrow" value="+" />
+										</td>
+							            
+							        </tr>
+							    </tbody>
+							     
+                            
+                     </table>
+		        </div>
+		      </div>
+		       
+
+		      </div>
+		    </div>
+
+		    <!-- Profetional Qualifications -->
+    		<div class="form-group">
+    			<div class="row">
+    				<label class="control-label col-sm-3" for="professional">Professional Qualifications:</label>
+    			</div>
+		      
+		       <div class="row">
+		       	<div class="col-sm-1"></div> 
+		       <div class="col-sm-9">          
+		        <div class="table-responsive"> 
+		        	<table class="table table-bordered order-list1">
+   					 <thead class="thead-primary">
+   					 	<tr>
+                                <th class="col-sm-4" style= "text-align: center;">
+                                    Title (Member of IESC)
+                                </th class="col-sm-4" style= "text-align: center;">
+                                <th>
+                                    Institute
+                                </th>
+                                <th class="col-sm-4" style= "text-align: center;">
+                                    Date of Award
+                                </th>
+
+                        </tr>
+                        </thead>
+                                <tbody>
+							       <tr>
+							            <td class="col-sm-3">
+							                <input type="text" name="title" class="form-control" />
+							            </td>
+							            <td class="col-sm-4">
+							                <input type="text" name="institutePro"  class="form-control"/>
+							            </td>
+							            <td class="col-sm-3">
+							                <input type="date" name="DateAwardPro"  class="form-control"/>
+							            </td>
+							            <td class="col-sm-2">
+							             	<input type="button" class="btn btn-outline-primary addrowPro"  value="+" />
+										</td>
+							        </tr>
+							    </tbody>
+							     
+                            
+                     </table>
+		        </div>
+		      </div>
+		      
+
+		      </div>
+		    </div>
+
+		    <!-- Profetional Qualifications -->
+    		<div class="form-group">
+    			<div class="row">
+    				<label class="control-label col-sm-3" for="experience">Experience :</label>
+    			</div>
+		      
+		       <div class="row">
+		       	<div class="col-sm-1"></div> 
+		       <div class="col-sm-9">          
+		        <div class="table-responsive"> 
+		        	<table class="table table-bordered order-listEX">
+   					 <thead class="thead-primary">
+   					 	<tr>
+                                <th class="col-sm-4" style= "text-align: center;">
+                                    Company/Organization
+                                </th class="col-sm-4" style= "text-align: center;">
+                                <th>
+                                    Position
+                                </th>
+                                <th class="col-sm-2" style= "text-align: center;">
+                                    From
+                                </th>
+                                <th class="col-sm-2" style= "text-align: center;">
+                                    To
+                                </th>
+                        </tr>
+                        </thead>
+                                <tbody>
+							       <tr>
+							            <td class="col-sm-4">
+							                <input type="text" name="company" class="form-control" />
+							            </td>
+							            <td class="col-sm-4">
+							                <input type="text" name="position"  class="form-control"/>
+							            </td>
+							            <td class="col-sm-2">
+							                <input type="text" class="form-control datepicker" name="datepicker" id="datepickerFromEx" />
+							            </td>
+							            <td class="col-sm-2">
+							                <input type="text" class="form-control datepicker" name="datepicker" id="datepickerToEx" />
+							            </td>
+							            <td>
+							            	<input type="button" class="btn btn-outline-primary " id="addrowEx" value="+" />
+							            </td>
+							        </tr>
+							    </tbody>
+							     
+                            
+                     </table>
+		        </div>
+		      </div>
+		      
+
+		      </div>
+		    </div>
+
+		    <!-- Other Informations -->
+		    <div class="form-group">
+		    	
+		    		<label class="control-label col-sm-2" for="otherInfo">Other Information :</label>
+		    		<div class="col-sm-8">
+		    			<textarea class="form-control" rows="5" id="otherInfo" placeholder="Enter any other information relevant to the post applied" name="otherInfo"></textarea>          
+			        	
+					</div>
+		    	
+		    </div>
+
+		    <!-- submit button -->
+		    <div class="form-group">
+		    <div class="col-sm-3"></div>        
+		      <div class="col-sm-offset-2 col-sm-6">
+		        <button type="submit" class="btn btn-primary">Submit</button>
+		      </div>
+		      <div class="col-sm-3"></div>
+    		</div>
+
+	</form>
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+
+	// display selected position in droup down
+	$(function(){
+
+		$("#positiondrop.dropdown-menu li a").click(function(){
+
+		$("#Position").text($(this).text());
+			 $("#Position").val($(this).text());
+
+		});
+
+	});
+
+	
+	
+	//datepicker for a selsect only month & year	
+	$(".datepicker").datepicker( {
+    format: "mm-yyyy",
+    startView: "months", 
+    minViewMode: "months"
+	});	
+
+	
+	//rows add and delete in higher edu qulification
+	$(document).ready(function () {
+    	var counter = 0;
+
+		$("#addrow").on("click", function () {
+			var newRow = $("<tr>");
+			var cols = "";
+
+			cols += '<td><input type="text" class="form-control" name="certificate' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control" name="institute' + counter + '"/></td>';
+			cols += '<td><div class=" control-label text-center" > <select style="width:130px;" class="btn btn-default dropdown-toggle class" id="class" name ="classDrop '+ counter + '" >Class <span class="caret"></span><option><a>1<sup>st</sup></a></option ><option ><a>2<sup>nd</sup> Upper</a></option ><option><a>2<sup>nd</sup> Lower</a></option ><option><a>3<sup>rd</sup></a></option><option><a>General</a></option></select></div></td>';
+			 cols += '<td><input type="date" class="form-control" name="dateAward' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control datepicker" id="datepickerFromEdu" name="datepicker' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control datepicker" id="datepickerToEdu" name="datepicker' + counter + '"/></td>';
+			cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+
+			// add new row
+			newRow.append(cols);
+			$("table.order-list").append(newRow);
+				counter++;
+			});
+
+			//delete row
+			$("table.order-list").on("click", ".ibtnDel", function (event) {
+        		$(this).closest("tr").remove();       
+        		counter -= 1
+    		});
+	});
+
+	
+	//rows add and delete in Professional qulification
+	$(document).ready(function () {
+    	var counter = 0;
+
+		$(".addrowPro").on("click", function () {
+			var newRow = $("<tr>");
+			var cols = "";
+
+			cols += '<td><input type="text" class="form-control" name="title' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control" name="institutePro' + counter + '"/></td>';
+			cols += '<td><input type="date" class="form-control" name="DateAwardPro' + counter + '"/></td>';
+			cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger" value="Delete"></td>';
+			
+			//add row
+			newRow.append(cols);
+			$("table.order-list1").append(newRow);
+				counter++;
+			});
+
+			//delete row
+			$("table.order-list1").on("click", ".ibtnDel", function (event) {
+        		$(this).closest("tr").remove();       
+        		counter -= 1
+    		});
+			
+	});
+
+	
+	//rows add and delete in Experence
+	$(document).ready(function () {
+    	var counter = 0;
+
+		$("#addrowEx").on("click", function () {
+			var newRow = $("<tr>");
+			var cols = "";
+
+			cols += '<td><input type="text" class="form-control" name="company' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control" name="position' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control datepicker" id="datepickerToEx" name="datepicker' + counter + '"/></td>';
+			cols += '<td><input type="text" class="form-control datepicker" id="datepickerToEx" name="datepicker' + counter + '"/></td>';
+			cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+
+			//add row
+			newRow.append(cols);
+			$("table.order-listEX").append(newRow);
+				counter++;
+			});
+
+
+			//delete row
+			$("table.order-listEX").on("click", ".ibtnDel", function (event) {
+        		$(this).closest("tr").remove();       
+        		counter -= 1
+    		});
+
+			
+	});
+</script>
+
+</body>
+</html>
